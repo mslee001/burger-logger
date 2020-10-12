@@ -1,12 +1,14 @@
-<div class="card bg-warning mb-3 mt-3">
-<h1 class="display-1 text-center font-weight-bolder">Eat-Da-Burger!</h1>
-</div>
+<div class="jumbotron bg-warning my-3">
+<h1 class="display-2 text-center">Devour Burgers!</h1>
+<p class="lead text-center">Add a burger to the menu, eat the burger, and remake the burger!</p>
+<hr class="my-4">
 
 <div class="card-deck">
 
-<div class="card bg-warning mb-3 p-3">
-<h2 class="card-title text-center">Devour the Burger!</h2>
-<ul>
+<div class="card shadow bg-light mb-3 p-3">
+<h2 class="card-title text-center">Menu!</h2>
+<hr class="my-4">
+<ul class="card-body">
   {{#each burgers}}
     {{#unless devoured}}
       {{> burgers/burger-block devoured=true}}
@@ -15,9 +17,10 @@
 </ul>
 </div>
 
-<div class="card bg-warning mb-3 p-3">
+<div class="card shadow bg-light mb-3 p-3">
 <h2 class="card-title text-center">Remake the Burger!</h2>
-<ul>
+<hr class="my-4">
+<ul class="card-body">
   {{#each burgers}}
     {{#if devoured}}
       {{> burgers/burger-block devoured=false}}
@@ -28,13 +31,14 @@
 
 </div>
 
-<div class="text-center card bg-warning mb-3 p-3">
-    <h2>Enter a burger you want to eat, and click the submit button</h2>
-    <form class="create-form">
+<div class="text-center card shadow bg-light mb-3 p-3">
+    <h2>Add a burger to the menu HERE!</h2>
+    <form class="create-form card-body">
         <div class="form-group">
             <label for="ca">Burger Name:</label>
             <input type="text" id="ca" name="burger_name">
         </div>
         <button type="submit" class="btn btn-secondary">Submit</button>
     </form>
+</div>
 </div>
